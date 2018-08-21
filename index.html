@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="main.css">
+	</head>
+	<body>
+		<div id="header">
+			ZynAddSubFX Preset Combiner v1.0.0 - isaiah658
+		</div>
+		<div id="body">
+			<span class="button">
+				<label>
+					Add a preset file...
+					<input onchange="loadpresetfromfile(this);" type="file" id="loadpresetfromfile" accept=".xpf"/>
+				</label>
+			</span>
+			<span class="button" onclick="location.reload()">
+				<label>
+					Reset
+				</label>
+			</span>
+			<span class="button" onclick="generate_and_save_files();">
+				<label>
+					Generate and save file(s)
+				</label>
+			</span>
+			<span class="button">
+				<label>
+					Number of files to generate:
+				</label>
+				<input type="number" min="1" max="99" id="number" value="1" placeholder="# of files...">
+			</span>
+			<div id="selectedpresetstitle">
+				Selected Files
+			</div>
+			<div id="selectedpresets"></div>
+		</div>
+		<textarea id="code"></textarea>
+		<script src='FileSaver.js'></script>
+		<script src="main.js"></script>
+	</body>
+</html>
